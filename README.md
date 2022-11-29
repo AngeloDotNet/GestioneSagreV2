@@ -30,10 +30,10 @@ Free software that allows the web management of parties and village festivals
 
 ## Run Locally with Docker
 
-This can be done with docker-compose, by running the  command
+This can be done with docker-compose. Go into the docker folder and run the command
 
 ```bash
-  docker-compose up --build
+  docker-compose up -d
 ```
 
 
