@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web", "src\GestioneSagre.Web\GestioneSagre.Web.csproj", "{E6DA438E-6B77-486F-B915-F9B832A26FCB}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.App", "src\GestioneSagre.Web.App\GestioneSagre.Web.App.csproj", "{E9F6A68E-0A08-4E73-8BCF-52EA81EFE4F2}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Authentication.Web.Api.Public", "src\GestioneSagre.Authentication.Web.Api.Public\GestioneSagre.Authentication.Web.Api.Public.csproj", "{D296B4C4-056A-42E8-86E6-D477FCC06359}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Categories.Web.Api.Public", "src\GestioneSagre.Categories.Web.Api.Public\GestioneSagre.Categories.Web.Api.Public.csproj", "{1CFA83C7-CECA-4148-834E-00416A21AC63}"
@@ -23,20 +19,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Settings.Web.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Versions.Web.Api.Public", "src\GestioneSagre.Versions.Web.Api.Public\GestioneSagre.Versions.Web.Api.Public.csproj", "{71BE00E6-5615-4E06-AF6F-5EE6F53CD46B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.App", "src\GestioneSagre.Web.App\GestioneSagre.Web.App.csproj", "{67FC298B-0EE5-48CA-81EF-1F26AFAA4360}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web", "src\GestioneSagre.Web\GestioneSagre.Web.csproj", "{D27C147A-0CC4-40A0-BA8B-E5AC97701058}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E6DA438E-6B77-486F-B915-F9B832A26FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6DA438E-6B77-486F-B915-F9B832A26FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6DA438E-6B77-486F-B915-F9B832A26FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6DA438E-6B77-486F-B915-F9B832A26FCB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E9F6A68E-0A08-4E73-8BCF-52EA81EFE4F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9F6A68E-0A08-4E73-8BCF-52EA81EFE4F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9F6A68E-0A08-4E73-8BCF-52EA81EFE4F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9F6A68E-0A08-4E73-8BCF-52EA81EFE4F2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D296B4C4-056A-42E8-86E6-D477FCC06359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D296B4C4-056A-42E8-86E6-D477FCC06359}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D296B4C4-056A-42E8-86E6-D477FCC06359}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -69,6 +61,14 @@ Global
 		{71BE00E6-5615-4E06-AF6F-5EE6F53CD46B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71BE00E6-5615-4E06-AF6F-5EE6F53CD46B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71BE00E6-5615-4E06-AF6F-5EE6F53CD46B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67FC298B-0EE5-48CA-81EF-1F26AFAA4360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67FC298B-0EE5-48CA-81EF-1F26AFAA4360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67FC298B-0EE5-48CA-81EF-1F26AFAA4360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67FC298B-0EE5-48CA-81EF-1F26AFAA4360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D27C147A-0CC4-40A0-BA8B-E5AC97701058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D27C147A-0CC4-40A0-BA8B-E5AC97701058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D27C147A-0CC4-40A0-BA8B-E5AC97701058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D27C147A-0CC4-40A0-BA8B-E5AC97701058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
