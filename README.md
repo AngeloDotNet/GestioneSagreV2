@@ -20,7 +20,7 @@ Free software that allows the web management of parties and village festivals
 
 **Serilog:** Logging
 
-**SQLite:** Database Management System (DBMS)
+**SQL Server:** Database Management System (DBMS)
 
 
 ## Architecture
