@@ -10,22 +10,18 @@ Free software that allows the web management of parties and village festivals
 
 **Server:** ASP.NET Core 6 (Web API)
 
-**EntityFramework:** Database Object Relational Mapping (ORM)
+**ORM Mapping:** Entity Framework Core 6
 
-**FluentValidator:** Validation
+**Database:** SQLite
 
-**MediatR:** Command Query Responsibility Segregation (CQRS)
+**Testing:** Unit Test
 
-**RabbitMQ:** Event bus (publish/subscribe)
-
-**Serilog:** Logging
-
-**SQL Server:** Database Management System (DBMS)
+**Tools:** Fluent Validation, MediatR with CQRS, RabbitMQ with MassTransit, Serilog, Automapper, Redis
 
 
 ## Architecture
 
-![App Screenshot](https://user-images.githubusercontent.com/49655304/204398448-534b622b-4211-4b53-9b24-12f34e68b4fa.png)
+![image](https://user-images.githubusercontent.com/49655304/206192800-f8bfe7f7-b97d-4f90-a250-cb0d253754f7.png)
 
 
 ## Run Locally with Docker
