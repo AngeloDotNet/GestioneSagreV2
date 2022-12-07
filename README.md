@@ -12,7 +12,7 @@ Free software that allows the web management of parties and village festivals
 
 **ORM Mapping:** Entity Framework Core 6
 
-**Database:** SQLite
+**Database:** SQL Server
 
 **Testing:** Unit Test
 
