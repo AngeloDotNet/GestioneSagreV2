@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace GestioneSagre.Orders.Web.Api.Public.Controllers;
+namespace GestioneSagre.Utility.Web.Api.Public.Controllers;
 
 [ApiController]
 [Route("[controller]")]

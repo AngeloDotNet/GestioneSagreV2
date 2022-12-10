@@ -1,4 +1,4 @@
-namespace GestioneSagre.Orders.Web.Api.Public;
+namespace GestioneSagre.Utility.Web.Api.Public;
 
 public class WeatherForecast
 {
