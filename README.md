@@ -21,7 +21,7 @@ Free software that allows the web management of parties and village festivals
 
 ## Architecture
 
-![image](https://user-images.githubusercontent.com/49655304/206192800-f8bfe7f7-b97d-4f90-a250-cb0d253754f7.png)
+![image](https://user-images.githubusercontent.com/49655304/206867527-19fc708d-775d-4f82-bb1a-c287bf5653f6.png)
 
 
 ## Run Locally with Docker
