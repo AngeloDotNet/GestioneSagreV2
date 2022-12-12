@@ -36,3 +36,8 @@ This can be done with docker-compose. Go into the docker folder and run the comm
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+## Badges
+
+[![Lint Code Base](https://github.com/AngeloDotNet/GestioneSagre/actions/workflows/linter.yml/badge.svg?branch=master)](https://github.com/AngeloDotNet/GestioneSagre/actions/workflows/linter.yml)
