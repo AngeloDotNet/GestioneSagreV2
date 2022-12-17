@@ -5,6 +5,7 @@ public class Program
     public static void Main(string[] args)
     {
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+        builder.Configuration.AddJsonFile("ocelot.json");
 
         Startup startup = new(builder.Configuration);
 

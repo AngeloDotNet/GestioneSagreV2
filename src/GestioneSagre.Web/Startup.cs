@@ -1,4 +1,8 @@
-﻿namespace GestioneSagre.Web;
+﻿using Microsoft.OpenApi.Models;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
+
+namespace GestioneSagre.Web;
 
 public class Startup
 {
@@ -11,20 +15,24 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddControllersWithViews();
-        services.AddRazorPages();
+        services.AddControllers();
+        services.AddOcelot();
+
+        services.AddSwaggerGen(config =>
+        {
+            config.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "Gestione Sagre",
+                Version = "v1"
+            });
+        });
     }
 
     public void Configure(WebApplication app)
     {
         IWebHostEnvironment env = app.Environment;
 
-        if (env.IsDevelopment())
-        {
-            app.UseWebAssemblyDebugging();
-        }
-
-        var enableSwagger = Configuration.GetSection("Swagger").GetValue<bool>("enabled");
+        var enableSwagger = Configuration.GetSection("Swagger").GetValue<bool>("Enabled");
 
         if (enableSwagger)
         {
@@ -36,16 +44,14 @@ public class Startup
         }
 
         app.UseHttpsRedirection();
-        app.UseBlazorFrameworkFiles();
-
         app.UseStaticFiles();
-        app.UseRouting();
 
+        app.UseRouting();
         app.UseEndpoints(endpoints =>
         {
-            endpoints.MapRazorPages();
             endpoints.MapControllers();
-            endpoints.MapFallbackToFile("index.html");
         });
+
+        app.UseOcelot().Wait();
     }
 }

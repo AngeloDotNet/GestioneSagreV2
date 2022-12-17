@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Versions.Web.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web.App", "src\GestioneSagre.Web.App\GestioneSagre.Web.App.csproj", "{67FC298B-0EE5-48CA-81EF-1F26AFAA4360}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web", "src\GestioneSagre.Web\GestioneSagre.Web.csproj", "{D27C147A-0CC4-40A0-BA8B-E5AC97701058}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bounded Contexts", "Bounded Contexts", "{1573E590-B55A-42B5-BADA-E3828643CA4B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Categorie", "Categorie", "{1ED42AAA-9DD7-4B23-A980-6A54D9105B4C}"
@@ -91,6 +89,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Statistics.We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Utility.Business", "src\GestioneSagre.Utility.Business\GestioneSagre.Utility.Business.csproj", "{9466D9DD-91AD-45F7-9FDE-CAF5BF9B509B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web", "src\GestioneSagre.Web\GestioneSagre.Web.csproj", "{C5E5AA1F-772E-4BD8-B2DE-51E5E866E43E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,10 +125,6 @@ Global
 		{67FC298B-0EE5-48CA-81EF-1F26AFAA4360}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67FC298B-0EE5-48CA-81EF-1F26AFAA4360}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67FC298B-0EE5-48CA-81EF-1F26AFAA4360}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D27C147A-0CC4-40A0-BA8B-E5AC97701058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D27C147A-0CC4-40A0-BA8B-E5AC97701058}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D27C147A-0CC4-40A0-BA8B-E5AC97701058}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D27C147A-0CC4-40A0-BA8B-E5AC97701058}.Release|Any CPU.Build.0 = Release|Any CPU
 		{397120CA-B5EF-4A49-AA21-15BBAEC09B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{397120CA-B5EF-4A49-AA21-15BBAEC09B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{397120CA-B5EF-4A49-AA21-15BBAEC09B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -173,6 +169,10 @@ Global
 		{9466D9DD-91AD-45F7-9FDE-CAF5BF9B509B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9466D9DD-91AD-45F7-9FDE-CAF5BF9B509B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9466D9DD-91AD-45F7-9FDE-CAF5BF9B509B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5E5AA1F-772E-4BD8-B2DE-51E5E866E43E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5E5AA1F-772E-4BD8-B2DE-51E5E866E43E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5E5AA1F-772E-4BD8-B2DE-51E5E866E43E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5E5AA1F-772E-4BD8-B2DE-51E5E866E43E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
