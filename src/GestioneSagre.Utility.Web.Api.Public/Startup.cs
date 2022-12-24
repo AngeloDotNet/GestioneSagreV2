@@ -20,7 +20,6 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
-
         services.AddCors(options =>
         {
             options.AddPolicy("UtilityPublicApi", policy =>
