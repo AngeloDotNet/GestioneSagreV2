@@ -11,6 +11,30 @@
             ],
             "UpstreamPathTemplate": "/helloworld/",
             "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/sendemail/{Id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7169
+                }
+            ],
+            "UpstreamPathTemplate": "/sendemail/{Id}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/sendemail/",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7169
+                }
+            ],
+            "UpstreamPathTemplate": "/sendemail/",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
         }
     ],
     "GlobalConfiguration": {}
