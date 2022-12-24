@@ -91,6 +91,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Utility.Busin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Web", "src\GestioneSagre.Web\GestioneSagre.Web.csproj", "{C5E5AA1F-772E-4BD8-B2DE-51E5E866E43E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementi di soluzione", "Elementi di soluzione", "{BB7460B3-5534-4D56-8552-88E95A0B574C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		App-Ports.txt = App-Ports.txt
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Shared", "src\GestioneSagre.Shared\GestioneSagre.Shared.csproj", "{9090A044-F357-453D-A0F6-177C86BCBB4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -173,6 +183,10 @@ Global
 		{C5E5AA1F-772E-4BD8-B2DE-51E5E866E43E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5E5AA1F-772E-4BD8-B2DE-51E5E866E43E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5E5AA1F-772E-4BD8-B2DE-51E5E866E43E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9090A044-F357-453D-A0F6-177C86BCBB4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9090A044-F357-453D-A0F6-177C86BCBB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9090A044-F357-453D-A0F6-177C86BCBB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9090A044-F357-453D-A0F6-177C86BCBB4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
