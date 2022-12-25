@@ -43,9 +43,8 @@ public class Startup
         var connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Database");
 
         services.AddDbContext<DataDbContext>(options =>
-            options.UseSqlite(connectionString, migration =>
-                migration.MigrationsAssembly(typeof(DataDbContext).Assembly.FullName))
-        );
+            options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetValue<string>("Database"),
+                migration => migration.MigrationsAssembly("GestioneSagre.Utility.Infrastructure")));
 
         services.AddApplicationCore();
         services.AddInfrastructure();
