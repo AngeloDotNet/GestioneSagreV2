@@ -11,7 +11,6 @@ internal class MessageManager : IMessageSender, IDisposable
     private const string MaxPriorityHeader = "x-max-priority";
 
     internal IConnection Connection { get; private set; }
-
     internal IModel Channel { get; private set; }
 
     private readonly MessageManagerSettings messageManagerSettings;
@@ -20,8 +19,8 @@ internal class MessageManager : IMessageSender, IDisposable
     public MessageManager(MessageManagerSettings messageManagerSettings, QueueSettings queueSettings)
     {
         var factory = new ConnectionFactory { Uri = new Uri(messageManagerSettings.ConnectionString) };
-        Connection = factory.CreateConnection();
 
+        Connection = factory.CreateConnection();
         Channel = Connection.CreateModel();
 
         if (messageManagerSettings.QueuePrefetchCount > 0)
@@ -49,23 +48,24 @@ internal class MessageManager : IMessageSender, IDisposable
     public Task PublishAsync<T>(T message, int priority = 1) where T : class
     {
         var sendBytes = Encoding.UTF8.GetBytes(JsonSerializer.Serialize<object>(message, messageManagerSettings.JsonSerializerOptions ?? JsonOptions.Default));
-
         var routingKey = queueSettings.Queues.First(q => q.Type == typeof(T)).Name;
+
         return PublishAsync(sendBytes.AsMemory(), routingKey, priority);
     }
 
     private Task PublishAsync(ReadOnlyMemory<byte> body, string routingKey, int priority = 1)
     {
         var properties = Channel.CreateBasicProperties();
+
         properties.Persistent = true;
         properties.Priority = Convert.ToByte(priority);
 
         Channel.BasicPublish(messageManagerSettings.ExchangeName, routingKey, properties, body);
+
         return Task.CompletedTask;
     }
 
     public void MarkAsComplete(BasicDeliverEventArgs message) => Channel.BasicAck(message.DeliveryTag, false);
-
     public void MarkAsRejected(BasicDeliverEventArgs message) => Channel.BasicReject(message.DeliveryTag, false);
 
     public void Dispose()

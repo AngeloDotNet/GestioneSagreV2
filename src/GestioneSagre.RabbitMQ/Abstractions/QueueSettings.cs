@@ -7,6 +7,7 @@ public class QueueSettings
     public void Add<T>(string queueName = null) where T : class
     {
         var type = typeof(T);
+
         Queues.Add((queueName ?? type.FullName, type));
     }
 }

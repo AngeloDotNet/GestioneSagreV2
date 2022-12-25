@@ -31,14 +31,12 @@ internal class QueueListener<T> : BackgroundService where T : class
     public override Task StartAsync(CancellationToken cancellationToken)
     {
         logger.LogDebug("RabbitMQ Listener for {QueueName} started", queueName);
-
         return base.StartAsync(cancellationToken);
     }
 
     public override Task StopAsync(CancellationToken cancellationToken)
     {
         logger.LogDebug("RabbitMQ Listener for {QueueName} stopped", queueName);
-
         return base.StopAsync(cancellationToken);
     }
 
@@ -47,6 +45,7 @@ internal class QueueListener<T> : BackgroundService where T : class
         stoppingToken.ThrowIfCancellationRequested();
 
         var consumer = new EventingBasicConsumer(messageManager.Channel);
+
         consumer.Received += async (_, message) =>
         {
             try
@@ -57,10 +56,10 @@ internal class QueueListener<T> : BackgroundService where T : class
 
                 var receiver = scope.ServiceProvider.GetRequiredService<IMessageReceiver<T>>();
                 var response = JsonSerializer.Deserialize<T>(message.Body.Span, messageManagerSettings.JsonSerializerOptions ?? JsonOptions.Default);
+
                 await receiver.ReceiveAsync(response, stoppingToken);
 
                 messageManager.MarkAsComplete(message);
-
                 logger.LogDebug("Message processed");
             }
             catch (Exception ex)
