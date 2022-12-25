@@ -40,7 +40,7 @@ public class Startup
             });
         });
 
-        var connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Default");
+        var connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Database");
 
         services.AddDbContext<DataDbContext>(options =>
             options.UseSqlite(connectionString, migration =>
@@ -49,6 +49,12 @@ public class Startup
 
         services.AddApplicationCore();
         services.AddInfrastructure();
+
+        var connectionRabbitMQ = Configuration.GetSection("ConnectionStrings").GetValue<string>("RabbitMq");
+        var exchangeName = Configuration.GetValue<string>("RabbitMq:ApplicationName");
+        var queuePrefetchCount = Configuration.GetValue<ushort>("RabbitMq:QueuePrefetchCount");
+
+        services.AddRabbitMqService(connectionRabbitMQ, exchangeName, queuePrefetchCount);
 
         services.AddAutoMapper(typeof(EmailMessageMapperProfile));
         services.AddMediatR(typeof(GetEmailMessagesListHandler).Assembly);

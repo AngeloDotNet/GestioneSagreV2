@@ -1,4 +1,5 @@
-﻿using GestioneSagre.Utility.CommandStack;
+﻿using GestioneSagre.RabbitMQ.Abstractions;
+using GestioneSagre.Utility.CommandStack;
 using GestioneSagre.Utility.Domain.Models.InputModels;
 using GestioneSagre.Utility.QueryStack;
 using GestioneSagre.Utility.Web.Api.Public.Controllers.Common;
@@ -10,10 +11,12 @@ namespace GestioneSagre.Utility.Web.Api.Public.Controllers;
 public class SendEmailController : BaseController
 {
     private readonly IMediator mediator;
+    private readonly IMessageSender messageSender;
 
-    public SendEmailController(IMediator mediator)
+    public SendEmailController(IMediator mediator, IMessageSender messageSender)
     {
         this.mediator = mediator;
+        this.messageSender = messageSender;
     }
 
     [HttpGet]
@@ -67,6 +70,8 @@ public class SendEmailController : BaseController
             {
                 return BadRequest();
             }
+
+            await messageSender.PublishAsync(request);
 
             return Ok();
         }
