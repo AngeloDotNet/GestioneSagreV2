@@ -8,12 +8,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GestioneSagre.Utility.Web.Api.Public.Controllers;
 
-public class SendEmailController : BaseController
+public class EmailController : BaseController
 {
     private readonly IMediator mediator;
     private readonly IMessageSender messageSender;
 
-    public SendEmailController(IMediator mediator, IMessageSender messageSender)
+    public EmailController(IMediator mediator, IMessageSender messageSender)
     {
         this.mediator = mediator;
         this.messageSender = messageSender;

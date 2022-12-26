@@ -40,11 +40,10 @@ public class Startup
             });
         });
 
-        var connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Database");
-
         services.AddDbContext<DataDbContext>(options =>
             options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetValue<string>("Database"),
-                migration => migration.MigrationsAssembly("GestioneSagre.Utility.Infrastructure")));
+                migration => migration.MigrationsAssembly("GestioneSagre.Utility.Infrastructure"))
+        );
 
         services.AddApplicationCore();
         services.AddInfrastructure();
@@ -69,6 +68,7 @@ public class Startup
         app.UseSwagger();
         app.UseSwaggerUI(options =>
         {
+            options.RoutePrefix = string.Empty;
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestione Sagre public API V1 - Utility");
         });
 
