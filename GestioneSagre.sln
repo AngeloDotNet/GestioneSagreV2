@@ -111,6 +111,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Tools.MailKit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Tools.RabbitMQ", "src\GestioneSagre.Tools.RabbitMQ\GestioneSagre.Tools.RabbitMQ.csproj", "{A418A495-DA37-4162-A175-A9E885A9C8A8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Utility.Core", "src\GestioneSagre.Utility.Core\GestioneSagre.Utility.Core.csproj", "{33D7DF04-F829-4C07-8008-BF9380C7369A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -213,6 +215,10 @@ Global
 		{A418A495-DA37-4162-A175-A9E885A9C8A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A418A495-DA37-4162-A175-A9E885A9C8A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A418A495-DA37-4162-A175-A9E885A9C8A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33D7DF04-F829-4C07-8008-BF9380C7369A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D7DF04-F829-4C07-8008-BF9380C7369A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D7DF04-F829-4C07-8008-BF9380C7369A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D7DF04-F829-4C07-8008-BF9380C7369A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -263,6 +269,7 @@ Global
 		{50E08F3C-D276-4D4B-A341-EA50B5CECA37} = {BB936311-DBF4-4956-BD06-393BF34BCEA7}
 		{6787E2AC-0177-4BCF-8526-C877AF7D5E50} = {A6C8E487-7168-4889-A659-4C78ED49B0C9}
 		{A418A495-DA37-4162-A175-A9E885A9C8A8} = {A6C8E487-7168-4889-A659-4C78ED49B0C9}
+		{33D7DF04-F829-4C07-8008-BF9380C7369A} = {683F70CE-CBE8-4B0E-B3DD-F340122F82B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {27DBCE8D-BC67-45EE-A426-7B8CDD3BB5F8}
