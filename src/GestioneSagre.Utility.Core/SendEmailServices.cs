@@ -2,8 +2,9 @@
 using GestioneSagre.Utility.Infrastructure.DataAccess;
 using GestioneSagre.Utility.Infrastructure.Enum;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
-namespace GestioneSagre.Utility.Web.Api.Internal.Services;
+namespace GestioneSagre.Utility.Core;
 
 public class SendEmailServices : ISendEmailServices
 {
@@ -22,7 +23,7 @@ public class SendEmailServices : ISendEmailServices
             .Where(x => x.Status == EmailStatus.Pending)
             .AsNoTracking();
 
-        List<EmailMessageViewModel> messages = await baseQuery
+        var messages = await baseQuery
             .Select(email => EmailMessageViewModel.FromEntity(email))
             .ToListAsync();
 
@@ -36,7 +37,7 @@ public class SendEmailServices : ISendEmailServices
             .Where(x => x.EmailId == emailId)
             .Select(email => EmailMessageViewModel.FromEntity(email));
 
-        EmailMessageViewModel message = await baseQuery.FirstOrDefaultAsync();
+        var message = await baseQuery.FirstOrDefaultAsync();
 
         return message;
     }

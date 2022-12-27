@@ -1,6 +1,6 @@
 ﻿using GestioneSagre.Utility.Domain.Models.ViewModels;
 
-namespace GestioneSagre.Utility.Web.Api.Internal.Services;
+namespace GestioneSagre.Utility.Core;
 
 public interface ISendEmailServices
 {
