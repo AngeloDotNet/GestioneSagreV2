@@ -1,7 +1,7 @@
 ﻿using GestioneSagre.Shared.RabbitMQ.InputModels;
 using GestioneSagre.Tools.MailKit.Options;
 using GestioneSagre.Tools.RabbitMQ.Abstractions;
-using GestioneSagre.Utility.Web.Api.Internal.Services;
+using GestioneSagre.Utility.Core;
 using Microsoft.Extensions.Options;
 
 namespace GestioneSagre.Utility.Web.Api.Internal.HostedServices;

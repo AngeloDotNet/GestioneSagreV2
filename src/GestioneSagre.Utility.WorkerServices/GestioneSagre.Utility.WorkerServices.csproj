@@ -9,8 +9,8 @@
     <ItemGroup>
         <ProjectReference Include="..\GestioneSagre.Tools.MailKit\GestioneSagre.Tools.MailKit.csproj" />
         <ProjectReference Include="..\GestioneSagre.Tools.RabbitMQ\GestioneSagre.Tools.RabbitMQ.csproj" />
+        <ProjectReference Include="..\GestioneSagre.Utility.Core\GestioneSagre.Utility.Core.csproj" />
         <ProjectReference Include="..\GestioneSagre.Utility.Domain\GestioneSagre.Utility.Domain.csproj" />
-        <ProjectReference Include="..\GestioneSagre.Utility.Web.Api.Internal\GestioneSagre.Utility.Web.Api.Internal.csproj" />
     </ItemGroup>
 
 </Project>
