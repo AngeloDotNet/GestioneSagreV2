@@ -35,18 +35,6 @@
             ],
             "UpstreamPathTemplate": "/email/",
             "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
-        },
-        {
-            "DownstreamPathTemplate": "/api/email/",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "192.168.1.140",
-                    "Port": 7228
-                }
-            ],
-            "UpstreamPathTemplate": "/sendemail/",
-            "UpstreamHttpMethod": [ "Post" ]
         }
     ],
     "GlobalConfiguration": {}
