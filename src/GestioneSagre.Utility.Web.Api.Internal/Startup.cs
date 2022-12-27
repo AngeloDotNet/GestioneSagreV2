@@ -1,7 +1,8 @@
-﻿using GestioneSagre.Utility.Domain.Mapping;
+﻿using GestioneSagre.Tools.MailKit;
+using GestioneSagre.Tools.MailKit.Options;
+using GestioneSagre.Utility.Domain.Mapping;
 using GestioneSagre.Utility.Infrastructure.DataAccess;
 using GestioneSagre.Utility.Web.Api.Internal.HostedServices;
-using GestioneSagre.Utility.Web.Api.Internal.Options;
 using GestioneSagre.Utility.Web.Api.Internal.Services;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;

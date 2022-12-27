@@ -7,14 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MailKit" Version="3.4.3" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.12" />
         <PackageReference Include="MediatR" Version="11.1.0" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\GestioneSagre.Tools.MailKit\GestioneSagre.Tools.MailKit.csproj" />
         <ProjectReference Include="..\GestioneSagre.Utility.Business\GestioneSagre.Utility.Business.csproj" />
         <ProjectReference Include="..\GestioneSagre.Utility.QueryStack\GestioneSagre.Utility.QueryStack.csproj" />
     </ItemGroup>

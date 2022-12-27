@@ -1,4 +1,5 @@
-﻿using GestioneSagre.Utility.Web.Api.Internal.Options;
+﻿using GestioneSagre.Tools.MailKit;
+using GestioneSagre.Tools.MailKit.Options;
 using GestioneSagre.Utility.Web.Api.Internal.Services;
 using Microsoft.Extensions.Options;
 

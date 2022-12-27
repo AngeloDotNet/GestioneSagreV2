@@ -1,6 +1,6 @@
 ﻿using GestioneSagre.Shared.Models.InputModels;
+using GestioneSagre.Tools.MailKit;
 using GestioneSagre.Utility.Web.Api.Internal.Controllers.Common;
-using GestioneSagre.Utility.Web.Api.Internal.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestioneSagre.Utility.Web.Api.Internal.Controllers;
