@@ -101,6 +101,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementi di soluzione", "El
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Shared", "src\GestioneSagre.Shared\GestioneSagre.Shared.csproj", "{9090A044-F357-453D-A0F6-177C86BCBB4C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Utility.WorkerServices", "src\GestioneSagre.Utility.WorkerServices\GestioneSagre.Utility.WorkerServices.csproj", "{FB3A9C98-0E3D-4ED7-AD29-0CF35637B89A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{A6C8E487-7168-4889-A659-4C78ED49B0C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Utility.Web.Api.Internal", "src\GestioneSagre.Utility.Web.Api.Internal\GestioneSagre.Utility.Web.Api.Internal.csproj", "{50E08F3C-D276-4D4B-A341-EA50B5CECA37}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Tools.MailKit", "src\GestioneSagre.Tools.MailKit\GestioneSagre.Tools.MailKit.csproj", "{6787E2AC-0177-4BCF-8526-C877AF7D5E50}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestioneSagre.Tools.RabbitMQ", "src\GestioneSagre.Tools.RabbitMQ\GestioneSagre.Tools.RabbitMQ.csproj", "{A418A495-DA37-4162-A175-A9E885A9C8A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -187,6 +197,22 @@ Global
 		{9090A044-F357-453D-A0F6-177C86BCBB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9090A044-F357-453D-A0F6-177C86BCBB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9090A044-F357-453D-A0F6-177C86BCBB4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB3A9C98-0E3D-4ED7-AD29-0CF35637B89A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB3A9C98-0E3D-4ED7-AD29-0CF35637B89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB3A9C98-0E3D-4ED7-AD29-0CF35637B89A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB3A9C98-0E3D-4ED7-AD29-0CF35637B89A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E08F3C-D276-4D4B-A341-EA50B5CECA37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E08F3C-D276-4D4B-A341-EA50B5CECA37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E08F3C-D276-4D4B-A341-EA50B5CECA37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E08F3C-D276-4D4B-A341-EA50B5CECA37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6787E2AC-0177-4BCF-8526-C877AF7D5E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6787E2AC-0177-4BCF-8526-C877AF7D5E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6787E2AC-0177-4BCF-8526-C877AF7D5E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6787E2AC-0177-4BCF-8526-C877AF7D5E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A418A495-DA37-4162-A175-A9E885A9C8A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A418A495-DA37-4162-A175-A9E885A9C8A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A418A495-DA37-4162-A175-A9E885A9C8A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A418A495-DA37-4162-A175-A9E885A9C8A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -233,6 +259,10 @@ Global
 		{42930606-7B9B-407A-B091-12D4F66AFD1E} = {0A26DF8F-20FE-43C7-813B-72BB8D7A765E}
 		{660B9872-C712-4940-865F-7AA7B629AECD} = {E46E815E-F6EA-4F53-9CAA-0D473787C0F8}
 		{9466D9DD-91AD-45F7-9FDE-CAF5BF9B509B} = {683F70CE-CBE8-4B0E-B3DD-F340122F82B0}
+		{FB3A9C98-0E3D-4ED7-AD29-0CF35637B89A} = {683F70CE-CBE8-4B0E-B3DD-F340122F82B0}
+		{50E08F3C-D276-4D4B-A341-EA50B5CECA37} = {BB936311-DBF4-4956-BD06-393BF34BCEA7}
+		{6787E2AC-0177-4BCF-8526-C877AF7D5E50} = {A6C8E487-7168-4889-A659-4C78ED49B0C9}
+		{A418A495-DA37-4162-A175-A9E885A9C8A8} = {A6C8E487-7168-4889-A659-4C78ED49B0C9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {27DBCE8D-BC67-45EE-A426-7B8CDD3BB5F8}

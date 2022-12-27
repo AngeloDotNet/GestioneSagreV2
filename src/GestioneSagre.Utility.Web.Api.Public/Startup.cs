@@ -40,18 +40,16 @@ public class Startup
             });
         });
 
-        var connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Default");
-
         services.AddDbContext<DataDbContext>(options =>
-            options.UseSqlite(connectionString, migration =>
-                migration.MigrationsAssembly(typeof(DataDbContext).Assembly.FullName))
+            options.UseSqlServer(Configuration.GetSection("ConnectionStrings").GetValue<string>("Database"),
+                migration => migration.MigrationsAssembly("GestioneSagre.Utility.Infrastructure"))
         );
 
         services.AddApplicationCore();
         services.AddInfrastructure();
 
-        services.AddAutoMapper(typeof(EmailMessageMapperProfile));
         services.AddMediatR(typeof(GetEmailMessagesListHandler).Assembly);
+        services.AddAutoMapper(typeof(EmailMessageMapperProfile));
     }
 
     public void Configure(WebApplication app)
@@ -64,6 +62,7 @@ public class Startup
         app.UseSwagger();
         app.UseSwaggerUI(options =>
         {
+            options.RoutePrefix = string.Empty;
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "Gestione Sagre public API V1 - Utility");
         });
 

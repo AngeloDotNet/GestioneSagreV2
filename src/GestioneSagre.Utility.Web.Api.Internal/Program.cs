@@ -1,11 +1,10 @@
-namespace GestioneSagre.Web;
+namespace GestioneSagre.Utility.Web.Api.Internal;
 
 public class Program
 {
     public static void Main(string[] args)
     {
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
-        builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
 
         Startup startup = new(builder.Configuration);
 

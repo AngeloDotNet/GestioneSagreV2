@@ -2,3 +2,4 @@ GestioneSagre.Web                       5000, 5001
 GestioneSagre.Web.App                   5133, 7126
 
 GestioneSagre.Utility.Web.Api.Public    5263, 7169
+GestioneSagre.Utility.Web.Api.Internal  5193, 7228    
