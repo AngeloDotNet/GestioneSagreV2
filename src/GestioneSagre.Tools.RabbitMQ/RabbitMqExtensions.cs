@@ -1,7 +1,7 @@
-using GestioneSagre.RabbitMQ.Abstractions;
+using GestioneSagre.Tools.RabbitMQ.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GestioneSagre.RabbitMQ;
+namespace GestioneSagre.Tools.RabbitMQ;
 
 public static class RabbitMQExtensions
 {

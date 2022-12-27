@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\GestioneSagre.RabbitMQ\GestioneSagre.RabbitMQ.csproj" />
+        <ProjectReference Include="..\GestioneSagre.Tools.RabbitMQ\GestioneSagre.Tools.RabbitMQ.csproj" />
         <ProjectReference Include="..\GestioneSagre.Utility.Domain\GestioneSagre.Utility.Domain.csproj" />
     </ItemGroup>
 

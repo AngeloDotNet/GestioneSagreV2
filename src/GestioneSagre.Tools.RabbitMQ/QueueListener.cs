@@ -1,13 +1,13 @@
 using System.Text;
 using System.Text.Json;
-using GestioneSagre.RabbitMQ.Abstractions;
+using GestioneSagre.Tools.RabbitMQ.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
-namespace GestioneSagre.RabbitMQ;
+namespace GestioneSagre.Tools.RabbitMQ;
 
 internal class QueueListener<T> : BackgroundService where T : class
 {

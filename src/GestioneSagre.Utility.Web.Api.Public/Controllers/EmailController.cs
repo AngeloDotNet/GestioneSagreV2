@@ -1,4 +1,4 @@
-﻿using GestioneSagre.RabbitMQ.Abstractions;
+﻿using GestioneSagre.Tools.RabbitMQ.Abstractions;
 using GestioneSagre.Utility.CommandStack;
 using GestioneSagre.Utility.Domain.Models.InputModels;
 using GestioneSagre.Utility.QueryStack;

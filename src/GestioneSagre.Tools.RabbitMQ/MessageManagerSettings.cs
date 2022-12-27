@@ -1,7 +1,7 @@
 using System.Text.Json;
-using GestioneSagre.RabbitMQ.Abstractions;
+using GestioneSagre.Tools.RabbitMQ.Abstractions;
 
-namespace GestioneSagre.RabbitMQ;
+namespace GestioneSagre.Tools.RabbitMQ;
 
 public class MessageManagerSettings
 {

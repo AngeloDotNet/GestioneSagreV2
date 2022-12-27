@@ -1,10 +1,10 @@
 using System.Text;
 using System.Text.Json;
-using GestioneSagre.RabbitMQ.Abstractions;
+using GestioneSagre.Tools.RabbitMQ.Abstractions;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
-namespace GestioneSagre.RabbitMQ;
+namespace GestioneSagre.Tools.RabbitMQ;
 
 internal class MessageManager : IMessageSender, IDisposable
 {

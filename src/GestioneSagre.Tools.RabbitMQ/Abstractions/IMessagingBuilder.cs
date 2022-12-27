@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GestioneSagre.RabbitMQ.Abstractions;
+namespace GestioneSagre.Tools.RabbitMQ.Abstractions;
 
 public interface IMessagingBuilder
 {

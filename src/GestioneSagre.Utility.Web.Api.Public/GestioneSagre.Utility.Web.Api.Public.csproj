@@ -16,7 +16,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\GestioneSagre.RabbitMQ\GestioneSagre.RabbitMQ.csproj" />
         <ProjectReference Include="..\GestioneSagre.Utility.Business\GestioneSagre.Utility.Business.csproj" />
     </ItemGroup>
 

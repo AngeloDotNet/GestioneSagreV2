@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Http.Json;
-using GestioneSagre.RabbitMQ.Abstractions;
 using GestioneSagre.Shared.Models.InputModels;
+using GestioneSagre.Tools.RabbitMQ.Abstractions;
 using GestioneSagre.Utility.Domain.Models.InputModels;
 
 namespace GestioneSagre.Utility.WorkerServices.Receivers;

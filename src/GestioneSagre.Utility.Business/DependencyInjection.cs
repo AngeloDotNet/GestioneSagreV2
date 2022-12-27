@@ -1,4 +1,4 @@
-﻿using GestioneSagre.RabbitMQ;
+﻿using GestioneSagre.Tools.RabbitMQ;
 using GestioneSagre.Utility.Domain.Models.InputModels;
 using GestioneSagre.Utility.Domain.Services.Read;
 using GestioneSagre.Utility.Domain.UnitOfWork;

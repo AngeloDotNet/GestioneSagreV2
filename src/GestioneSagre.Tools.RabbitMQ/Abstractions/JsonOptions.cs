@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace GestioneSagre.RabbitMQ.Abstractions;
+namespace GestioneSagre.Tools.RabbitMQ.Abstractions;
 
 internal static class JsonOptions
 {
