@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using GestioneSagre.Utility.Domain.Models.ViewModels;
+﻿using GestioneSagre.Utility.Domain.Models.ViewModels;
 using GestioneSagre.Utility.Infrastructure.DataAccess;
 using GestioneSagre.Utility.Infrastructure.Enum;
 using Microsoft.EntityFrameworkCore;
@@ -10,13 +9,11 @@ public class SendEmailServices : ISendEmailServices
 {
     private readonly ILogger<SendEmailServices> logger;
     private readonly DataDbContext dbContext;
-    private readonly IMapper mapper;
 
-    public SendEmailServices(ILogger<SendEmailServices> logger, DataDbContext dbContext, IMapper mapper)
+    public SendEmailServices(ILogger<SendEmailServices> logger, DataDbContext dbContext)
     {
         this.logger = logger;
         this.dbContext = dbContext;
-        this.mapper = mapper;
     }
 
     public async Task<List<EmailMessageViewModel>> GetAllEmailMessagesAsync()
@@ -25,10 +22,23 @@ public class SendEmailServices : ISendEmailServices
             .Where(x => x.Status == EmailStatus.Pending)
             .AsNoTracking();
 
-        var dataLinq = await baseQuery.ToListAsync();
-        var result = mapper.Map<List<EmailMessageViewModel>>(dataLinq);
+        List<EmailMessageViewModel> messages = await baseQuery
+            .Select(email => EmailMessageViewModel.FromEntity(email))
+            .ToListAsync();
 
-        return result;
+        return messages;
+    }
+
+    public async Task<EmailMessageViewModel> GetEmailMessageAsync(Guid emailId)
+    {
+        var baseQuery = dbContext.EmailMessages
+            .AsNoTracking()
+            .Where(x => x.EmailId == emailId)
+            .Select(email => EmailMessageViewModel.FromEntity(email));
+
+        EmailMessageViewModel message = await baseQuery.FirstOrDefaultAsync();
+
+        return message;
     }
 
     public async Task<bool> UpdateEmailStatusAsync(int id, Guid emailId, int status)

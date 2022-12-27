@@ -1,44 +1,38 @@
-﻿using System.Net;
-using System.Net.Http.Json;
-using GestioneSagre.Shared.Models.InputModels;
+﻿using GestioneSagre.Shared.RabbitMQ.InputModels;
+using GestioneSagre.Tools.MailKit;
 using GestioneSagre.Tools.RabbitMQ.Abstractions;
-using GestioneSagre.Utility.Domain.Models.InputModels;
+using GestioneSagre.Utility.Web.Api.Internal.Services;
 
 namespace GestioneSagre.Utility.WorkerServices.Receivers;
 
-public class EmailMessageReceiver : IMessageReceiver<CreateEmailMessageInputModel>
+public class EmailMessageReceiver : IMessageReceiver<EmailMessageInputModel>
 {
     private readonly ILogger logger;
-    private readonly HttpClient httpClient;
+    private readonly IEmailClient emailClient;
+    private readonly ISendEmailServices sendEmailServices;
 
-    public EmailMessageReceiver(ILogger<EmailMessageReceiver> logger, HttpClient httpClient)
+    public EmailMessageReceiver(ILogger<EmailMessageReceiver> logger, IEmailClient emailClient, ISendEmailServices sendEmailServices)
     {
         this.logger = logger;
-        this.httpClient = httpClient;
+        this.emailClient = emailClient;
+        this.sendEmailServices = sendEmailServices;
     }
 
-    public async Task ReceiveAsync(CreateEmailMessageInputModel message, CancellationToken cancellationToken)
+    public async Task ReceiveAsync(EmailMessageInputModel message, CancellationToken cancellationToken)
     {
-        logger.LogInformation("Send the email to {Recipient} - {RecipientEmail}, with subject {Subject} and message {Message}",
-            message.Recipient, message.RecipientEmail, message.Subject, message.Message);
+        var result = await emailClient.SendEmailAsync(message.RecipientEmail, null, message.Subject, message.Message, cancellationToken);
 
-        EmailInputModel emailMessage = new()
+        if (!result)
         {
-            RecipientEmail = message.RecipientEmail,
-            ReplyEmail = null,
-            Subject = message.Subject,
-            Message = message.Message
-        };
+            var messageDetail = await sendEmailServices.GetEmailMessageAsync(message.EmailId);
 
-        var result = await httpClient.PostAsJsonAsync("https://localhost:7228/api/email", emailMessage, cancellationToken);
-
-        if (result.StatusCode != HttpStatusCode.OK)
-        {
-            //Se esito negativo aggiorno lo stato della mail a Failed
-            logger.LogWarning("The sending of the email {EmailId}, failed.", message.EmailId);
+            await sendEmailServices.UpdateEmailStatusAsync(messageDetail.Id, messageDetail.EmailId, 3);
         }
+        else
+        {
+            var messageDetail = await sendEmailServices.GetEmailMessageAsync(message.EmailId);
 
-        //Se esito positivo aggiorno lo stato della mail a Sent
-        logger.LogInformation("Sending the email {EmailId}, has been sent successfully", message.EmailId);
+            await sendEmailServices.UpdateEmailStatusAsync(messageDetail.Id, messageDetail.EmailId, 1);
+        }
     }
 }

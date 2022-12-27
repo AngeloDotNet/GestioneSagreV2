@@ -48,14 +48,8 @@ public class Startup
         services.AddApplicationCore();
         services.AddInfrastructure();
 
-        var connectionRabbitMQ = Configuration.GetSection("ConnectionStrings").GetValue<string>("RabbitMq");
-        var exchangeName = Configuration.GetValue<string>("RabbitMq:ApplicationName");
-        var queuePrefetchCount = Configuration.GetValue<ushort>("RabbitMq:QueuePrefetchCount");
-
-        services.AddRabbitMqService(connectionRabbitMQ, exchangeName, queuePrefetchCount);
-
-        services.AddAutoMapper(typeof(EmailMessageMapperProfile));
         services.AddMediatR(typeof(GetEmailMessagesListHandler).Assembly);
+        services.AddAutoMapper(typeof(EmailMessageMapperProfile));
     }
 
     public void Configure(WebApplication app)
