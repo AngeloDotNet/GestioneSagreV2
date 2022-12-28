@@ -22,16 +22,14 @@ public class EmailMessageReceiver : IMessageReceiver<EmailMessageInputModel>
     {
         var result = await emailClient.SendEmailAsync(message.RecipientEmail, null, message.Subject, message.Message, cancellationToken);
 
+        var messageDetail = await sendEmailServices.GetEmailMessageAsync(message.EmailId);
+
         if (!result)
         {
-            var messageDetail = await sendEmailServices.GetEmailMessageAsync(message.EmailId);
-
             await sendEmailServices.UpdateEmailStatusAsync(messageDetail.Id, messageDetail.EmailId, 3);
         }
         else
         {
-            var messageDetail = await sendEmailServices.GetEmailMessageAsync(message.EmailId);
-
             await sendEmailServices.UpdateEmailStatusAsync(messageDetail.Id, messageDetail.EmailId, 1);
         }
     }

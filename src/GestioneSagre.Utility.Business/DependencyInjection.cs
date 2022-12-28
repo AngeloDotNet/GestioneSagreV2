@@ -1,9 +1,10 @@
-﻿using GestioneSagre.Tools.RabbitMQ;
-using GestioneSagre.Utility.Domain.Models.InputModels;
+﻿using GestioneSagre.Tools.MailKit;
+using GestioneSagre.Utility.Core;
 using GestioneSagre.Utility.Domain.Services.Read;
 using GestioneSagre.Utility.Domain.UnitOfWork;
 using GestioneSagre.Utility.Infrastructure.DataAccess;
 using GestioneSagre.Utility.Infrastructure.Repository.Read;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -36,19 +37,12 @@ public static class DependencyInjection
         return services;
     }
 
-    public static IServiceCollection AddRabbitMqService(this IServiceCollection services, string connectionString,
-        string exchangeName, ushort queuePrefetchCount)
+    public static IServiceCollection AddWorkerService(this IServiceCollection services)
     {
-        services.AddRabbitMq(settings =>
-        {
-            settings.ConnectionString = connectionString;
-            settings.ExchangeName = exchangeName;
-            settings.QueuePrefetchCount = queuePrefetchCount;
-        },
-        queues =>
-        {
-            queues.Add<CreateEmailMessageInputModel>();
-        });
+        services.AddTransient<ISendEmailServices, SendEmailServices>();
+
+        services.AddSingleton<IEmailSender, MailKitEmailSender>();
+        services.AddSingleton<IEmailClient, MailKitEmailSender>();
 
         return services;
     }
