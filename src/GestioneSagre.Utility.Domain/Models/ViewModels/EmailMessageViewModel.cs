@@ -1,11 +1,11 @@
-﻿using GestioneSagre.Utility.Infrastructure.Entities;
+﻿using GestioneSagre.Shared.Entities;
+using GestioneSagre.Utility.Infrastructure.Entities;
 using GestioneSagre.Utility.Infrastructure.Enum;
 
 namespace GestioneSagre.Utility.Domain.Models.ViewModels;
 
-public class EmailMessageViewModel
+public class EmailMessageViewModel : BaseEntity
 {
-    public int Id { get; set; }
     public Guid EmailId { get; set; }
     public string Recipient { get; set; }
     public string RecipientEmail { get; set; }

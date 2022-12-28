@@ -1,8 +1,9 @@
-﻿namespace GestioneSagre.Utility.Domain.Models.InputModels;
+﻿using GestioneSagre.Shared.Entities;
 
-public class DeleteEmailMessageInputModel
+namespace GestioneSagre.Utility.Domain.Models.InputModels;
+
+public class DeleteEmailMessageInputModel : BaseEntity
 {
-    public int Id { get; set; }
     public Guid EmailId { get; set; }
 
     public DeleteEmailMessageInputModel(int id, Guid emailId)
