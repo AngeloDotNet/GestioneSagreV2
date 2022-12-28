@@ -60,6 +60,7 @@ public class SendEmailServices : ISendEmailServices
 
             if (status == 1)
             {
+                entity.EffectiveSendDate = DateTime.Now;
                 entity.Status = EmailStatus.Sent;
             }
 
