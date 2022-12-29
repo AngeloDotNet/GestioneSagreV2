@@ -34,7 +34,7 @@ public class EmailSenderHostedService : BackgroundService
                     ISendEmailServices sendEmailServices = serviceProvider.GetRequiredService<ISendEmailServices>();
 
                     var options = this.smtpOptions.CurrentValue;
-                    var timer = (int)TimeSpan.FromSeconds(options.TimerInSeconds).TotalMilliseconds;
+                    var timer = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
 
                     logger.LogInformation("EmailSenderHostedService - Start");
                     var emailList = await sendEmailServices.GetAllEmailMessagesAsync();

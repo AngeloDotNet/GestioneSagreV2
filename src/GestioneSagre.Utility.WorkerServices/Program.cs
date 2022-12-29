@@ -1,5 +1,4 @@
 using GestioneSagre.Shared.RabbitMQ.InputModels;
-using GestioneSagre.Tools.MailKit.Options;
 using GestioneSagre.Tools.RabbitMQ;
 using GestioneSagre.Utility.Business;
 using GestioneSagre.Utility.Infrastructure.DataAccess;
@@ -33,6 +32,4 @@ void ConfigureServices(HostBuilderContext hostingContext, IServiceCollection ser
     );
 
     services.AddWorkerService();
-
-    services.Configure<SmtpOptions>(configuration.GetSection("Smtp"));
 }
