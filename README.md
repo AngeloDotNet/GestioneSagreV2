@@ -14,9 +14,10 @@ Free software that allows the web management of parties and village festivals
 
 **Database:** SQL Server
 
+**Validation:** Data Annotations
+
 **Testing:** Unit Test
 
-<!-- **Tools:** Fluent Validation, MediatR with CQRS, RabbitMQ, Serilog, Automapper, Redis -->
 **Tools:** MediatR with CQRS, RabbitMQ, Serilog, Automapper, Redis
 
 
