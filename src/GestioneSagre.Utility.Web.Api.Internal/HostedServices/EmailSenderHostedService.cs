@@ -34,8 +34,10 @@ public class EmailSenderHostedService : BackgroundService
                     ISendEmailServices sendEmailServices = serviceProvider.GetRequiredService<ISendEmailServices>();
 
                     var options = this.smtpOptions.CurrentValue;
+                    var timer = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
+
+                    logger.LogInformation("EmailSenderHostedService - Start");
                     var emailList = await sendEmailServices.GetAllEmailMessagesAsync();
-                    var timer = (int)TimeSpan.FromSeconds(options.TimerInSeconds).TotalMilliseconds;
 
                     if (emailList.Count != 0)
                     {
@@ -43,10 +45,12 @@ public class EmailSenderHostedService : BackgroundService
                         {
                             if (email.EmailSendCount >= options.MaxSenderCount)
                             {
+                                logger.LogWarning("MaxSenderCount reached for email {emailId}", email.Id);
                                 await sendEmailServices.UpdateEmailStatusAsync(email.Id, email.EmailId, 2);
                             }
                             else
                             {
+                                logger.LogInformation("Email creation {emailId}", email.Id);
                                 EmailMessageInputModel message = new()
                                 {
                                     Id = email.Id,
@@ -57,6 +61,7 @@ public class EmailSenderHostedService : BackgroundService
                                     Message = email.Message
                                 };
 
+                                logger.LogInformation("Sending email {emailId}", email.Id);
                                 await messageSender.PublishAsync(message);
                             }
 

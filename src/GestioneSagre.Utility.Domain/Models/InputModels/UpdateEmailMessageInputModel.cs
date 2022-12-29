@@ -1,10 +1,10 @@
-﻿using GestioneSagre.Utility.Infrastructure.Enum;
+﻿using GestioneSagre.Shared.Entities;
+using GestioneSagre.Utility.Infrastructure.Enum;
 
 namespace GestioneSagre.Utility.Domain.Models.InputModels;
 
-public partial class UpdateEmailMessageInputModel
+public partial class UpdateEmailMessageInputModel : BaseEntity
 {
-    public int Id { get; set; }
     public Guid EmailId { get; set; }
     public string Recipient { get; set; }
     public string RecipientEmail { get; set; }

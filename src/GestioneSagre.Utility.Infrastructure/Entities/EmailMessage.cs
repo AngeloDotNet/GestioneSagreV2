@@ -1,10 +1,10 @@
-﻿using GestioneSagre.Utility.Infrastructure.Enum;
+﻿using GestioneSagre.Shared.Entities;
+using GestioneSagre.Utility.Infrastructure.Enum;
 
 namespace GestioneSagre.Utility.Infrastructure.Entities;
 
-public class EmailMessage
+public class EmailMessage : BaseEntity
 {
-    public int Id { get; set; }
     public Guid EmailId { get; set; }
     public string Recipient { get; set; }
     public string RecipientEmail { get; set; }

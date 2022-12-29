@@ -1,11 +1,8 @@
 using GestioneSagre.Shared.RabbitMQ.InputModels;
-using GestioneSagre.Tools.MailKit;
-using GestioneSagre.Tools.MailKit.Options;
 using GestioneSagre.Tools.RabbitMQ;
-using GestioneSagre.Utility.Core;
+using GestioneSagre.Utility.Business;
 using GestioneSagre.Utility.Infrastructure.DataAccess;
 using GestioneSagre.Utility.WorkerServices.Receivers;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var host = Host.CreateDefaultBuilder(args)
@@ -27,17 +24,12 @@ void ConfigureServices(HostBuilderContext hostingContext, IServiceCollection ser
     {
         queues.Add<EmailMessageInputModel>();
     })
-   .AddReceiver<EmailMessageInputModel, EmailMessageReceiver>();
+        .AddReceiver<EmailMessageInputModel, EmailMessageReceiver>();
 
     services.AddDbContext<DataDbContext>(options =>
             options.UseSqlServer(configuration.GetSection("ConnectionStrings").GetValue<string>("Database"),
                 migration => migration.MigrationsAssembly("GestioneSagre.Utility.Infrastructure"))
     );
 
-    services.AddTransient<ISendEmailServices, SendEmailServices>();
-
-    services.AddSingleton<IEmailSender, MailKitEmailSender>();
-    services.AddSingleton<IEmailClient, MailKitEmailSender>();
-
-    services.Configure<SmtpOptions>(configuration.GetSection("Smtp"));
+    services.AddWorkerService();
 }

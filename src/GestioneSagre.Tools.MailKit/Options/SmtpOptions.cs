@@ -11,5 +11,4 @@ public class SmtpOptions
     public string Password { get; set; }
     public string Sender { get; set; }
     public int MaxSenderCount { get; set; }
-    public int TimerInSeconds { get; set; }
 }
